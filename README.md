@@ -1,1 +1,50 @@
-# ai_programming_week11
+# 성적 관리 프로그램
+
+## 1. 무엇을 하나요? (What)
+CSV 파일을 읽어 유효한 학생의 이름과 점수를 저장하고, 잘못된 데이터는 제외하여 그 이유를 기록하는 프로그램입니다.
+
+## 2. 왜 만들었나요? (Why)
+실제 CSV 파일에는 빈 점수, 범위를 벗어난 점수, 잘못된 형식의 데이터 등이 포함될 수 있습니다. 이러한 데이터를 올바르게 구분하고 처리하기 위해 만들었습니다.
+
+## 3. 어떻게 사용하나요? (How)
+Python이 설치된 환경에서 다음 명령어를 입력합니다.
+
+```bash
+python load_scores.py scores.csv
+```
+
+프로그램은 유효한 학생의 이름과 점수, 건너뛴 데이터의 개수를 출력합니다.
+
+## 4. 어떻게 테스트하나요?
+pytest를 설치합니다.
+
+```bash
+python -m pip install pytest pytest-cov
+```
+
+다음 명령어로 직접 작성한 테스트를 실행합니다.
+
+```bash
+python -m pytest test_load_scores.py
+```
+
+코드 커버리지를 확인하려면 다음 명령어를 사용합니다.
+
+```bash
+python -m pytest test_load_scores.py --cov=load_scores --cov-report=term-missing
+```
+
+## 5. 파일 구성
+- `load_scores.py`: 성적 CSV 파일을 읽고 검증하는 프로그램
+- `test_load_scores.py`: 직접 작성한 단위 테스트
+- `test_ai_A.py`: AI에게 코드를 제공하여 생성한 테스트
+- `test_ai_B.py`: AI에게 명세서를 제공하여 생성한 테스트
+- `scores.csv`: 성적 데이터
+- `empty.csv`: 헤더만 있는 파일
+- `weird.csv`: 다양한 형식의 데이터를 포함한 파일
+
+## 6. 만든 사람 및 AI 활용
+- 작성자: 박윤선
+- 학번: 2026100233
+- 과목: AI 협업 프로그래밍
+- AI 활용: ChatGPT를 활용하여 테스트 코드를 생성하고, 코드 기반 테스트와 명세 기반 테스트를 비교하였습니다.
